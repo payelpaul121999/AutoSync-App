@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "288027391121",
+    "project_id": "clipsyncxapp",
+    "storage_bucket": "clipsyncxapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288027391121:android:e4e28c01b382ab7e567b30",
+        "android_client_info": {
+          "package_name": "com.pal.clipsyncxapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw6iy9U2pg_NFyVpr7imfF5saMk4AWbQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288027391121:android:14f7203d79915c05567b30",
+        "android_client_info": {
+          "package_name": "com.palpa.autosyncapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw6iy9U2pg_NFyVpr7imfF5saMk4AWbQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
