@@ -27,7 +27,7 @@ This Android application allows users to store their personal data, including na
 ## Project Setup
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repository.git
+   git clone https://github.com/payelpaul121999/AutoSync-App.git
    ```
 2. Open the project in Android Studio.
 3. Add your Firebase configuration file (`google-services.json`) to the `app/` directory.
