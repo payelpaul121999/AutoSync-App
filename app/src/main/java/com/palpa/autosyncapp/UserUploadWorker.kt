@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.pm.ServiceInfo
 import android.net.Uri
 import android.os.Build
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.net.toUri
@@ -48,6 +49,7 @@ class UserUploadWorker(private val context: Context,private val workerParams: Wo
                                 val imageUplaoderUrl = storeFileToServer(fileArray,"imagePath/")
                                 user.imageUri = imageUplaoderUrl.orEmpty()
                                 addNewUser(user)
+                                UserDatabase.getDatabase(context).clearAllTables()
                             }
                         }
                     }

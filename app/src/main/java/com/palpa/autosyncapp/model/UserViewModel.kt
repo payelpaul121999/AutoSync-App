@@ -25,6 +25,15 @@ class UserViewModel(private val application: Application) : AndroidViewModel(app
 
     fun insert(user: User) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(user)
+       /* withContext(Dispatchers.Main){
+            val uploadImageFileWorkRequest =
+                OneTimeWorkRequestBuilder<UserUploadWorker>()
+                    .setExpedited(OutOfQuotaPolicy.RUN_AS_NON_EXPEDITED_WORK_REQUEST)
+                    .build()
+            WorkManager.getInstance(application).enqueue(uploadImageFileWorkRequest)
+        }*/
+    }
+    fun uploadIntoDatabase() = viewModelScope.launch(Dispatchers.IO) {
         withContext(Dispatchers.Main){
             val uploadImageFileWorkRequest =
                 OneTimeWorkRequestBuilder<UserUploadWorker>()

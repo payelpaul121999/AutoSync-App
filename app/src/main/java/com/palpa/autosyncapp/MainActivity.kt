@@ -16,7 +16,17 @@ import com.palpa.autosyncapp.model.User
 import com.palpa.autosyncapp.model.UserViewModel
 import kotlinx.coroutines.flow.callbackFlow
 
-
+/*
+ userViewModel.insert(user)*/
+/*val user = User(
+    name = "John Doe",
+    dob = "1990-01-01",
+    address = "123 Main St",
+    pin = "123456",
+    district = "XYZ",
+    state = "ABC",
+    imageUri = "path_to_image"
+)*/
 class MainActivity : AppCompatActivity() {
     private val userViewModel: UserViewModel by lazy { UserViewModel(application) }
     private lateinit var imageView: ImageView
@@ -36,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         imageView = findViewById(R.id.imageView)
         val btnPickImage = findViewById<Button>(R.id.btnPickImage)
         val btnSave = findViewById<Button>(R.id.btnSave)
+        val btnSaveToServer = findViewById<Button>(R.id.btnSaveToServer)
 
         btnPickImage.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
@@ -53,20 +64,12 @@ class MainActivity : AppCompatActivity() {
                 state = stateEditText.text.toString(),
                 imageUri = imageUri.toString()
             )
-           /*
-            userViewModel.insert(user)*/
-            /*val user = User(
-                name = "John Doe",
-                dob = "1990-01-01",
-                address = "123 Main St",
-                pin = "123456",
-                district = "XYZ",
-                state = "ABC",
-                imageUri = "path_to_image"
-            )*/
-
             userViewModel.insert(user) // Insert user into database
             Toast.makeText(this@MainActivity, "User Saved!", Toast.LENGTH_SHORT).show()
+        }
+        btnSaveToServer.setOnClickListener {
+         userViewModel.uploadIntoDatabase()
+         Toast.makeText(this@MainActivity, "Saved", Toast.LENGTH_SHORT).show()
         }
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
